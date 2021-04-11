@@ -1,4 +1,5 @@
-N = list(map(int, input().split()))
+N = int(input())
 numList = list(map(int, input().split()))
 numList.sort()
+print(N)
 print(*numList)
