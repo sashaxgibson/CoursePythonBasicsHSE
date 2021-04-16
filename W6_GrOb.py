@@ -18,7 +18,7 @@ for i in range(len(nn)):
     while j < len(mm):
         dist = abs(nn[i][0] - mm[j][0])
         if j != len(mm) - 1:
-            if dist < abs(nn[i][0] - mm[j + 1][0]):
+            if dist <= abs(nn[i][0] - mm[j + 1][0]):
                 a.append((mm[j][1], nn[i][1]))
                 break
             if dist > abs(nn[i][0] - mm[j + 1][0]):
