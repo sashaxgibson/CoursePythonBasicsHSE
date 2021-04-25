@@ -1,7 +1,10 @@
 inFile = open('input.txt', 'r', encoding='utf8')
 outFile = open('output.txt', 'w', encoding='utf8')
 nameList = inFile.readlines()
-print(nameList)
-a = nameList[0]
-print(a)
-print(a.strip())
+answList = []
+for i in range(len(nameList)):
+    a = nameList[i].split()
+    answList.append(a[0] + ' ' + a[1] + ' ' + a[3] + '\n')
+print(''.join(answList), file=outFile)
+inFile.close()
+outFile.close()
