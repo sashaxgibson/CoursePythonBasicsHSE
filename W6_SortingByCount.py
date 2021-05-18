@@ -1,16 +1,15 @@
-inFile = open('input.txt', 'r', encoding='utf8')
-outFile = open('output.txt', 'w', encoding='utf8')
-dataStr = inFile.readlines()
-dataList = []
-for i in range(len(dataStr)):
-    dataList.append(dataStr[i].split())
-print(dataList)
+dataList = list(map(int, input().split()))
 
-def countSort(N):
-    funcList = []
-    for i in N:
-        funcList[i] += 1
-    print(funcList)
+
+def countSort(dataList):
+    countNumList = [0] * 101
+    for cur in dataList:
+        countNumList[cur] += 1
+    answList = []
+    for num in range(len(countNumList)):
+        for i in range(countNumList[num]):
+            answList.append(num)
+    print(*answList)
 
 
 countSort(dataList)
