@@ -1,5 +1,4 @@
-#K = int(input())
-K = 5
+K = int(input())
 inFile = open('input.txt', 'r', encoding='utf8')
 outFile = open('output.txt', 'w', encoding='utf8')
 lines = inFile.readlines()
@@ -16,8 +15,14 @@ for now in myScoreList:
     else:
         continue
 goodScoreList.sort(reverse=True)
-if len(goodScoreList) > K:
-    answ = goodScoreList[4]
-    print(answ)
-elif len(goodScoreList) < K:
-        print(0)
+if len(goodScoreList) <= K:
+        print(0, file=outFile)
+else:
+    if len(goodScoreList) > K:
+        passScore = goodScoreList[K - 1]
+        if passScore != goodScoreList[K]:
+            print(passScore, file=outFile)
+        else:
+            print(1, file=outFile)
+inFile.close()
+outFile.close()
