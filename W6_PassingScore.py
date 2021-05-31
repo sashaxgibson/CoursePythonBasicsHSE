@@ -3,6 +3,7 @@ outFile = open('output.txt', 'w', encoding='utf8')
 lines = inFile.readlines()
 K = int(lines[0])
 lines.pop(0)
+print(lines)
 myScoreList = []
 for now in lines:
     x = now.split()
