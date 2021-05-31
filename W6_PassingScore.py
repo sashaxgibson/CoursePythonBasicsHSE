@@ -1,8 +1,8 @@
-K = int(input())
 inFile = open('input.txt', 'r', encoding='utf8')
 outFile = open('output.txt', 'w', encoding='utf8')
 lines = inFile.readlines()
-N = len(lines)
+K = int(lines[0])
+lines.pop(0)
 myScoreList = []
 for now in lines:
     x = now.split()
@@ -10,11 +10,12 @@ for now in lines:
     myScoreList.append(curManScore)
 goodScoreList = []
 for now in myScoreList:
-    if now[0] and now[1] and now[2] >= 40:
+    if now[0] >= 40 and now[1] >= 40 and now[2] >= 40:
         goodScoreList.append(sum(now))
     else:
         continue
 goodScoreList.sort(reverse=True)
+print(goodScoreList)
 if len(goodScoreList) <= K:
         print(0, file=outFile)
 else:
