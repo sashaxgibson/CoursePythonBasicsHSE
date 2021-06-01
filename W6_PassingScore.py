@@ -3,15 +3,16 @@ outFile = open('output.txt', 'w', encoding='utf8')
 lines = inFile.readlines()
 K = int(lines[0])
 lines.pop(0)
-print(lines)
 myScoreList = []
 for now in lines:
     x = now.split()
     curManScore = (int(x[-3]), int(x[-2]), int(x[-1]))
     myScoreList.append(curManScore)
+print(myScoreList)
 goodScoreList = []
 for now in myScoreList:
-    if now[0] >= 40 and now[1] >= 40 and now[2] >= 40:
+    if now[0] > 39 and now[1] > 39 and now[2] > 39:
+        print(now)
         goodScoreList.append(sum(now))
     else:
         continue
