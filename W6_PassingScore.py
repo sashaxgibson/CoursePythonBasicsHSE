@@ -14,12 +14,14 @@ for now in myScoreList:
     else:
         continue
 goodScoreList.sort(reverse=True)
+#финальный подсчёт начинается ниже
 if len(goodScoreList) <= K:
         print(0, file=outFile)
 else:
     if goodScoreList[0] == goodScoreList[K]:
         print(1, file=outFile)
     else:
+
 
 inFile.close()
 outFile.close()
