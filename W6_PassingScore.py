@@ -14,14 +14,22 @@ for now in myScoreList:
     else:
         continue
 goodScoreList.sort(reverse=True)
-#финальный подсчёт начинается ниже
 if len(goodScoreList) <= K:
         print(0, file=outFile)
 else:
     if goodScoreList[0] == goodScoreList[K]:
         print(1, file=outFile)
     else:
-        print('pisos')
+        i = K
+        passScore = 300
+        while i > 0:
+            if goodScoreList[i] == goodScoreList[i - 1]:
+                i -= 1
+                continue
+            else:
+                passScore = goodScoreList[i - 1]
+                print(passScore, file=outFile)
+                break
 
 
 inFile.close()
