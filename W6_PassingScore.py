@@ -21,6 +21,7 @@ else:
     if goodScoreList[0] == goodScoreList[K]:
         print(1, file=outFile)
     else:
+        print('pisos')
 
 
 inFile.close()
