@@ -1,4 +1,10 @@
-import sys
-emptySet = set()
-for line in sys.stdin:
-    print(line)
+inFile = open('input.txt', 'r', encoding='utf8')
+outFile = open('output.txt', 'w', encoding='utf8')
+wordsSet = set()
+allLines = inFile.readlines()
+print(allLines)
+for cur in allLines:
+    tempLine = cur[:-3]
+    tempSet = set(tempLine)
+    tempSet | wordsSet
+    print(wordsSet)
