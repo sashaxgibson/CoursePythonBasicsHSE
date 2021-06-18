@@ -4,7 +4,7 @@ wordsSet = set()
 allLines = inFile.readlines()
 print(allLines)
 for cur in allLines:
-    tempLine = cur[:-3]
+    tempLine = cur[:-2]
     print(tempLine)
     tempSet = set(tempLine)
     tempSet | wordsSet
