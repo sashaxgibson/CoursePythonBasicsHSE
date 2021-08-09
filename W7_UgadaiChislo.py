@@ -6,3 +6,4 @@ b = int(a[0])
 print(b)
 check = "YES\n"
 print(check == a[2])
+#koku-sakkiry
