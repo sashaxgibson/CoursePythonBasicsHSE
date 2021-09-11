@@ -7,3 +7,4 @@ outFile = open('output.txt', 'w', encoding='utf8')
 #print(nameList)
 fuf = inFile.read()
 print(fuf)
+#Метод strip() применяется для удаления символа \n в конце введенных строк
