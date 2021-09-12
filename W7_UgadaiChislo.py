@@ -1,17 +1,15 @@
-#import sys
-#dataList = list(sys.stdin.readlines())
 inFile = open('input.txt', 'r', encoding='utf8')
 dataList = inFile.readlines()
-print(dataList)
 baseSet = set(range(1, int(dataList[0]) + 1))
-print(baseSet)
-for i in range(1, len(dataList) + 1, 2):
+for i in range(1, len(dataList), 2):
     if dataList[i].strip() != 'HELP':
-        beatSet = set(dataList[i].split())
-        if dataList[i + 1] == 'YES':
+        curSet = set(map(int, dataList[i].strip().split()))
+        curAnsw = dataList[i + 1].strip()
+        if curAnsw == 'NO':
+            baseSet -= curSet
             continue
-        if dataList[i + 1] == 'NO':
-            beatSet = set(int(dataList[i]))
-            baseSet = baseSet - beatSet
-    else:
-        print(sorted(list(baseSet)))
+        elif curAnsw == 'YES':
+            baseSet &= curSet
+            continue
+    if dataList[i].strip() == 'HELP':
+        print(*sorted(baseSet))
