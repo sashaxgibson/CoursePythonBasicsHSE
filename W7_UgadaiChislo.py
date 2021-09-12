@@ -1,23 +1,17 @@
-##Ctrl + D чтобы остановить ввод в sys.stdin
-##print(' '.join(a[0].split()))
 #import sys
-#a = list(sys.stdin.readlines())
+#dataList = list(sys.stdin.readlines())
 inFile = open('input.txt', 'r', encoding='utf8')
 dataList = inFile.readlines()
 print(dataList)
-maxNum = int(dataList[0])
-baseSet = set(range(1, maxNum + 1))
+baseSet = set(range(1, int(dataList[0]) + 1))
 print(baseSet)
-tempSet = set(list(map(int, dataList[1].split())))
-answSet = set()
-print(tempSet)
-for i in range(3, len(dataList)):
-    curSet = a[i - 1]
-    if a[i].strip() == 'HELP':
-        print(*answSet)
+for i in range(1, len(dataList) + 1, 2):
+    if dataList[i].strip() != 'HELP':
+        beatSet = set(dataList[i].split())
+        if dataList[i + 1] == 'YES':
+            continue
+        if dataList[i + 1] == 'NO':
+            beatSet = set(int(dataList[i]))
+            baseSet = baseSet - beatSet
     else:
-        if a[i].strip() == 'NO':
-                continue
-        if a[i].strip() == 'YES':
-            answSet = tempSet - curSet
-
+        print(sorted(list(baseSet)))
