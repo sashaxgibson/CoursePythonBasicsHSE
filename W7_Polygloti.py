@@ -3,4 +3,6 @@ dataList = inFile.readlines()
 N = int(dataList[0])
 allLang = set()
 comLang = set()
-for i in range(N):
+i = 1
+while i <= N + 1:
+    curLangQ = int(dataList[i])
