@@ -1,9 +1,9 @@
 inFile = open('input.txt', 'r', encoding='utf8')
-dataList = []
+demoList = inFile.read()
+print(demoList)
 dataList = inFile.readlines()
 print(dataList)
-clrList = list(map())
+clrList = []
+for cur in dataList:
+    clrList.append(cur.strip())
 print(clrList)
-N = int(dataList[0])
-allLang = set()
-comLang = set()
