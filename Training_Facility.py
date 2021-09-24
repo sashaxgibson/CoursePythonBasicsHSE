@@ -5,4 +5,6 @@ for line in inFile:
 print(dataList)
 sumLang = set()
 commonLang = set()
-i = 1
+i = 0
+while i < len(dataList):
+    
