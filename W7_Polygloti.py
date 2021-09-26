@@ -3,6 +3,9 @@ dataList = []
 for line in inFile:
     dataList.append(line.strip())
 print(dataList)
-curQuanLang = int(dataList[1])
-tstList = dataList[2:2+int(dataList[1])]
+i = 1
+curQuanLang = int(dataList[i])
+tstList = dataList[i + 1:i + 1 + curQuanLang]
 print(tstList)
+i = 1
+while i < len(dataList):
