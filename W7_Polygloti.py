@@ -3,9 +3,7 @@ dataList = []
 for line in inFile:
     dataList.append(line.strip())
 print(dataList)
+numLang = int(dataList[1])
+knowledgeList = []
 i = 1
-curQuanLang = int(dataList[i])
-tstList = dataList[i + 1:i + 1 + curQuanLang]
-print(tstList)
-i = 1
-while i < len(dataList):
+while i
