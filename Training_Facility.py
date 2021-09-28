@@ -1,4 +1,1 @@
-a = {1, 2, 3}
-b = {4, 5, 6}
-c = set()
-print(a & c)
+inFile = open('input.txt', 'r', encoding='utf-8')
