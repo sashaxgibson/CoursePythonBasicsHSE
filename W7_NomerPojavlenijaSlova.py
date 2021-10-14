@@ -1,6 +1,10 @@
 inFile = open('input.txt')
 a = inFile.read()
-print(a)
-print(a.strip())
-print(list(map(str, a.split())))
-print(len(a.split()))
+wrdList = list(map(str, a.split()))
+print(wrdList)
+knigga = dict()
+for i in wrdList:
+    if i in knigga:
+        print(knigga[i], end=' ')
+    else:
+        print(0, end=' ')
