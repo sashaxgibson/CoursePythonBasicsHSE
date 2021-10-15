@@ -1,6 +1,6 @@
 inFile = open('input.txt')
 a = inFile.read()
-wrdList = list(map(str, a.split()))
+wrdList = a.split()
 print(wrdList)
 knigga = dict()
 for i in wrdList:
