@@ -6,5 +6,7 @@ knigga = dict()
 for i in wrdList:
     if i in knigga:
         print(knigga[i], end=' ')
+        knigga[i] += 1
     else:
         print(0, end=' ')
+        knigga[i] = 1

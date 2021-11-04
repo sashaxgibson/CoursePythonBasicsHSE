@@ -4,4 +4,7 @@ for service, phone in phones.items():
 print(phones['police'])
 pebis = 'dupa'
 phones[pebis] = 'zhepa'
+phones['benis'] = 'bagina'
 print(phones)
+phones['police'] = phones['police'] * 100
+print(phones['police'] + 1)
