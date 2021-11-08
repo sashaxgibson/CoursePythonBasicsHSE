@@ -1,3 +1,5 @@
 inFile = open('input.txt')
 N = int(inFile.readline())
-print(N)
+slovar = {}
+while N > 0:
+    
