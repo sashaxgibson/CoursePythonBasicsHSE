@@ -1,3 +1,3 @@
-inFile = open('input.txt')
-a = inFile.read()
-print(a)
+a = ['A','a','a','B','b','C','c','d','E']
+print(sorted(a))
+print('A' < 'a')
