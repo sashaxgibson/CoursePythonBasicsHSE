@@ -8,3 +8,6 @@ for cur in a:
     else:
         slavear[cur] = 1
 print(slavear)
+print(*slavear.values())
+for i in slavear:
+    print(i)
