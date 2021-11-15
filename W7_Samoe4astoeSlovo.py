@@ -11,3 +11,4 @@ print(slavear)
 print(*slavear.values())
 for i in slavear:
     print(i)
+print(slavear.va)
