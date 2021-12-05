@@ -7,3 +7,5 @@ for cur in a:
     else:
         slavear[cur] = 1
 print(slavear)
+c = sorted(slavear, key=lambda x: (slavear[x], [x],))
+print(c)
