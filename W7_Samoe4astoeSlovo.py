@@ -6,8 +6,7 @@ for cur in a:
         slavear[cur] += 1
     else:
         slavear[cur] = 1
-print(slavear)
-#answList = sorted(slavear, key=lambda x: (slavear[x], x))
-#print(answList[0])
-for cur in slavear:
-    print(-slavear[cur], cur)
+otvlist = []
+for now in slavear:
+    otvlist.append((now, -slavear[now]))
+print((sorted(otvlist, key=lambda x: (x[1], x[0]))[0])[0])
