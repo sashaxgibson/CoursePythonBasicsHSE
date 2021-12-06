@@ -1,3 +1,3 @@
-inFile = open('input.txt')
+inFile = open('input.txt', 'r', encoding='UTF-8')
 a = inFile.read().split()
-slavear = dict()
+print(a)
