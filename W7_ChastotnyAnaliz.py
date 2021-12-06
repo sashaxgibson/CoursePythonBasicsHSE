@@ -6,6 +6,9 @@ for cur in a:
         slavear[cur] += 1
     else:
         slavear[cur] = 1
-print(slavear)
-c = sorted(slavear, key=lambda x: (slavear[x], [x],))
-print(c)
+answList = []
+for i in slavear:
+    answList.append((slavear[i], i))
+answList.sort(key=lambda i: (-i[0], i[1]))
+for i in answList:
+    print(i[1])
