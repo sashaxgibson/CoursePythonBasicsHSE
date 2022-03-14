@@ -1,0 +1,5 @@
+a = float(input())
+IntPrt = int(a)
+NumInStr = str(a)
+LenIntPrt = len(str(IntPrt))
+print('0' + NumInStr[LenIntPrt:])
