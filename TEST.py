@@ -1,3 +1,2 @@
-a = [5, 2, 3, 1, 4]
-a.sort()
-print(a)
+nums = map(int, input().split())
+print(*filter(lambda x: x > 0, nums))
