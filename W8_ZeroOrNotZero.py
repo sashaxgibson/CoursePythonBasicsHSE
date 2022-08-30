@@ -1,3 +1,2 @@
 import sys
-rdata = sys.stdin.read()
-print(len(set(sys.stdin.read().split())))
+print(any(map(lambda x: int(x) == 0, sys.stdin.read().split())))
