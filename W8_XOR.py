@@ -1,5 +1,2 @@
 import sys
-a = sys.stdin.readline().split()
-b = sys.stdin.readline().split()
-print(*zip(a, b))
-#print(*map(lambda x, y: int(x[0]) + int(y[0]), zip(a, b)))
+print(*map(lambda x: x[0] ^ x[1], zip(map(int, sys.stdin.readline().split()), map(int, sys.stdin.readline().split()))))
