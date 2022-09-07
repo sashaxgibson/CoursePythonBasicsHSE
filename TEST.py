@@ -1,4 +1,4 @@
-a = "Член"
-b = "В"
-c = "Вагину"
-print(a, b, c)
+class Dog:
+    def __init__(self):
+        self.color = blue
+        
