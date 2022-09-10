@@ -1,7 +1,7 @@
 class Dog:
     def __init__(self):
-        self.color = "blue"
+        self.color = "серый"
 
 
-bello = Dog()
-print(bello.color)
+bublik = Dog()
+print("Цвет этой собаки - ", bublik.color, sep='', end='.')
