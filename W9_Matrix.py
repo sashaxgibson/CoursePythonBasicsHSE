@@ -2,7 +2,7 @@ from sys import stdin
 
 class Matrix:
     def __init__(self, ListOfLists):
-        self.innerlist = ListOfLists
+        self.obj_list = ListOfLists
 
 m = Matrix([[1, 0], [0, 1]])
 print(m)
