@@ -1,3 +1,0 @@
-import itertools
-
-itertools.combinations()
