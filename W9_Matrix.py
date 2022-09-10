@@ -1,10 +1,8 @@
 from sys import stdin
 
 class Matrix:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
+    def __init__(self, ListOfLists):
+        self.innerlist = ListOfLists
 
 m = Matrix([[1, 0], [0, 1]])
 print(m)
