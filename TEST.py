@@ -4,4 +4,4 @@ class Dog:
 
 
 bublik = Dog()
-print("Цвет этой собаки - ", bublik.color, sep='', end='.')
+print("Цвет этой собаки - ", bublik.color, sep='', end='')
