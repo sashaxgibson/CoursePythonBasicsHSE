@@ -1,24 +1,25 @@
 from sys import stdin
 
+
 class Matrix:
 
-
-    def __init__(self, ListOfLists):
-        tstList = []
-        for i in ListOfLists:
-            tempList = []
+    def __init__(self, listoflists):
+        tstlist = []
+        for i in listoflists:
+            templist = []
             for j in i:
-                tempList.append(j)
-            tstList.append(tempList)
-        self.obj_list = tstList
-
+                templist.append(j)
+            tstlist.append(templist)
+        self.obj_list = tstlist
 
     def __str__(self):
-        for i in self:
-            print(*map(str, i), sep='\t')
-            return map(str, i)
-
+        uni_lst = []
+        for i in self.obj_list:
+            uni_lst.append('\t'.join(map(str, i)))
+        return '\n'.join(map(str, uni_lst))
 
     def size(self):
         return len(self.obj_list), len(self.obj_list[0])
 
+
+exec(stdin.read())
