@@ -22,4 +22,4 @@ class Matrix:
         return len(self.obj_list), len(self.obj_list[0])
 
 
-exec(stdin.read())
+#exec(stdin.read())
