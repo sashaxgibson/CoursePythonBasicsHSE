@@ -1,2 +1,2 @@
-s = input()
-print(s.isalpha())
+s = int(input())
+print(s * 3)
