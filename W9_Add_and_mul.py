@@ -26,7 +26,9 @@ class Matrix:
         for i in range(len(self.obj_list)):
             result_line = []
             for j in range(len(self.obj_list[0])):
-                result_line.append(self.obj_list[i][j] + second_mtrx.obj_list[i][j])
+                x1 = self.obj_list[i][j]
+                x2 = second_mtrx.obj_list[i][j]
+                result_line.append(x1 + x2)
             result_mtrx.append(result_line)
         return Matrix(result_mtrx)
 
@@ -35,9 +37,10 @@ class Matrix:
         for i in range(len(self.obj_list)):
             new_matrix_line = []
             for j in range(len(self.obj_list[0])):
-                new_matrix_line.append(j * mnozh)
+                xij = self.obj_list[i][j] * mnozh
+                new_matrix_line.append(xij)
             new_matrix.append(new_matrix_line)
-            return Matrix(new_matrix)
+        return Matrix(new_matrix)
 
     __rmul__ = __mul__
 
