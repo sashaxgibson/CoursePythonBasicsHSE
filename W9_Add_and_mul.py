@@ -22,10 +22,11 @@ class Matrix:
 
     def __add__(self, second_mtrx):
         result_mtrx = []
-        result_line = []
         for i in self.obj_list:
+            result_line = []
             for j in i:
-                result_line.append()
-
+                result_line.append(self.obj_list[i][j] + second_mtrx[i][j])
+            result_mtrx.append(result_line)
+        return result_mtrx
 
 #exec(stdin.read())
