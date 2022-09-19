@@ -1,5 +1,6 @@
 from sys import stdin
 
+
 class Matrix:
 
     def __init__(self, listoflists):
@@ -28,6 +29,7 @@ class Matrix:
                 result_line.append(self.obj_list[i][j] + second_mtrx[i][j])
             result_mtrx.append(result_line)
         return Matrix(result_mtrx)
+
     def __mul__(self, mnozh):
         new_matrix = []
         for i in range(len(self.obj_list)):
