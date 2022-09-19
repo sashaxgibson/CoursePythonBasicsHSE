@@ -1,15 +1,11 @@
+from sys import stdin
 from copy import deepcopy
+
 
 class Matrix:
 
     def __init__(self, listoflists):
-        tstlist = []
-        for i in listoflists:
-            templist = []
-            for j in i:
-                templist.append(j)
-            tstlist.append(templist)
-        self.obj_list = tstlist
+        self.obj_list = deepcopy(listoflists)
 
     def __str__(self):
         uni_lst = []
@@ -22,13 +18,25 @@ class Matrix:
 
     def __add__(self, second_mtrx):
         result_mtrx = []
-        for i in range(second_mtrx.size()):
+        for i in range(len(self.obj_list)):
             result_line = []
             for j in range(len(self.obj_list[0])):
-                result_line.append(self.obj_list[i][j] + second_mtrx[i][j])
+                result_line.append(self.obj_list[i][j] + second_mtrx.obj_list[i][j])
             result_mtrx.append(result_line)
         return Matrix(result_mtrx)
 
+    def __mul__(self, mnozh):
+        new_matrix = []
+        for i in range(len(self.obj_list)):
+            new_matrix_line = []
+            for j in range(len(self.obj_list[0])):
+                new_matrix_line.append(j * mnozh)
+            new_matrix.append(new_matrix_line)
+            return Matrix(new_matrix)
+
+    __rmul__ = __mul__
+
+
 m1 = Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
 m2 = Matrix([[0, 1, 0], [20, 0, -1], [-1, -2, 0]])
-print(m1.size())
+print(m1 + m2)

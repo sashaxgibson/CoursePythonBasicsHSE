@@ -1,6 +1,7 @@
 from sys import stdin
 from copy import deepcopy
 
+
 class Matrix:
 
     def __init__(self, listoflists):
@@ -20,7 +21,9 @@ class Matrix:
         for i in range(len(self.obj_list)):
             result_line = []
             for j in range(len(self.obj_list[0])):
-                result_line.append(self.obj_list[i][j] + second_mtrx[i][j])
+                x1 = self.obj_list[i][j]
+                x2 = second_mtrx.obj_list[i][j]
+                result_line.append(x1 + x2)
             result_mtrx.append(result_line)
         return Matrix(result_mtrx)
 
@@ -35,4 +38,4 @@ class Matrix:
 
     __rmul__ = __mul__
 
-#exec(stdin.read())
+exec(stdin.read())

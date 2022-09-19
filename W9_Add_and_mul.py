@@ -26,7 +26,7 @@ class Matrix:
         for i in range(len(self.obj_list)):
             result_line = []
             for j in range(len(self.obj_list[0])):
-                result_line.append(self.obj_list[i][j] + second_mtrx[i][j])
+                result_line.append(self.obj_list[i][j] + second_mtrx.obj_list[i][j])
             result_mtrx.append(result_line)
         return Matrix(result_mtrx)
 
