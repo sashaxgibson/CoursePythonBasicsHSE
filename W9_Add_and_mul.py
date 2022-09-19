@@ -1,6 +1,5 @@
 from sys import stdin
 
-
 class Matrix:
 
     def __init__(self, listoflists):
@@ -20,6 +19,13 @@ class Matrix:
 
     def size(self):
         return len(self.obj_list), len(self.obj_list[0])
+
+    def __add__(self, second_mtrx):
+        result_mtrx = []
+        result_line = []
+        for i in self.obj_list:
+            for j in i:
+                result_line.append()
 
 
 #exec(stdin.read())
