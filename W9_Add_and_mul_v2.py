@@ -4,13 +4,7 @@ from copy import deepcopy
 class Matrix:
 
     def __init__(self, listoflists):
-        tstlist = []
-        for i in listoflists:
-            templist = []
-            for j in i:
-                templist.append(j)
-            tstlist.append(templist)
-        self.obj_list = tstlist
+        self.obj_list = deepcopy(listoflists)
 
     def __str__(self):
         uni_lst = []
@@ -41,4 +35,4 @@ class Matrix:
 
     __rmul__ = __mul__
 
-exec(stdin.read())
+#exec(stdin.read())
