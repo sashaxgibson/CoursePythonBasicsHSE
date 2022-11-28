@@ -13,7 +13,7 @@ for i in range(n):
     tempManData = input().split()
     man = Man()
     man.height = int(tempManData[0])
-    man.name =  tempManData[1]
+    man.name = tempManData[1]
     peopleList.append(man)
 peopleList.sort(key=mankey)
 for man in peopleList:
