@@ -1,12 +1,6 @@
 from sys import stdin
 
 
-class MatrixError(BaseException):
-    def __init__(self, Matrix, other):
-        self.matrix1 = Matrix
-        self.matrix2 = other
-
-
 class Matrix:
 
     def __init__(self, listoflists):
@@ -28,19 +22,15 @@ class Matrix:
         return len(self.obj_list), len(self.obj_list[0])
 
     def __add__(self, second_mtrx):
-        if self.size() == second_mtrx.size():
-            result_mtrx = []
-            for i in range(len(self.obj_list)):
-                result_line = []
-                for j in range(len(self.obj_list[0])):
-                    x1 = self.obj_list[i][j]
-                    x2 = second_mtrx.obj_list[i][j]
-                    result_line.append(x1 + x2)
-                result_mtrx.append(result_line)
-            return Matrix(result_mtrx)
-        else:
-            raise MatrixError(self, second_mtrx)
-        return Matrix(m1, m2)
+        result_mtrx = []
+        for i in range(len(self.obj_list)):
+            result_line = []
+            for j in range(len(self.obj_list[0])):
+                x1 = self.obj_list[i][j]
+                x2 = second_mtrx.obj_list[i][j]
+                result_line.append(x1 + x2)
+            result_mtrx.append(result_line)
+        return Matrix(result_mtrx)
 
     def __mul__(self, mnozh):
         new_matrix = []
@@ -56,14 +46,10 @@ class Matrix:
 
 #exec(stdin.read())
 
-m1 = Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
-m2 = Matrix([[0, 1, 0], [20, 0, -1], [-1, -2, 0]])
-print(m1 + m2)
 
-m2 = Matrix([[0, 1, 0], [20, 0, -1]])
-try:
-    m = m1 + m2
-    print('WA\n' + str(m))
-except MatrixError as e:
-    print(e.matrix1)
-    print(e.matrix2)
+m = Matrix([[1, 0], [0, 1]]).size()
+print(m)
+m = Matrix([[2, 0, 0], [0, 1, 10000]]).size()
+print(m)
+m = Matrix([[-10, 20, 50, 2443], [-5235, 12, 4324, 4234]]).size()
+print(m)
