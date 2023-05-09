@@ -1,33 +1,18 @@
-class Complex:
-    def __init__(self, re=0, im=0):
-        self.re = re
-        self.im = im
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+b = [[1, 2, 3], [4, 5, 6]]
 
-    def __str__(self):
-        strRep = str(self.re)
-        if self.im >= 0:
-            strRep += '+'
-        strRep += str(self.im) + 'i'
-        return strRep
+def transpose(matrix_in):
+    trdMatrix = []
+    lines = len(matrix_in)
+    columns = len(matrix_in[0])
+    k = 0
+    while k < columns:
+        new_line = []
+        for i in matrix_in:
+            new_line.append(i[k])
+        trdMatrix.append(new_line)
+        k += 1
+    return trdMatrix
 
-    def __add__(self, other):
-        newRe = self.re + other.re
-        newIm = self.im + other.im
-        return Complex(newRe, newIm)
-
-    def __mul__(self, other):
-        if isinstance(other, Complex):
-            newRe = self.re * other.re - self.im * other.im
-            newIm = self.re * other.im + self.im * other.re
-        elif isinstance(other, int) or isinstance(other, float):
-            newRe = self.re * other
-            newIm = self.im * other
-        return Complex(newRe, newIm)
-
-    __rmul__ = __mul__
-
-
-a = Complex(1, 2)
-b = Complex(3, -4.5)
-print(a * b)
-print(a * 2)
+print(transpose(a))
+print(transpose(b))

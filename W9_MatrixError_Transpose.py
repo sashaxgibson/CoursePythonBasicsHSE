@@ -2,9 +2,9 @@ from sys import stdin
 
 
 class MatrixError(BaseException):
-    def __init__(self, Matrix, other):
-        self.matrix1 = Matrix
-        self.matrix2 = other
+    def __init__(self, pervaja, vtoraja):
+        self.matrix1 = pervaja
+        self.matrix2 = vtoraja
 
 
 class Matrix:
@@ -37,10 +37,9 @@ class Matrix:
                     x2 = second_mtrx.obj_list[i][j]
                     result_line.append(x1 + x2)
                 result_mtrx.append(result_line)
-            return Matrix(result_mtrx)
         else:
             raise MatrixError(self, second_mtrx)
-        return Matrix(m1, m2)
+        return Matrix(result_mtrx)
 
     def __mul__(self, mnozh):
         new_matrix = []
@@ -54,16 +53,39 @@ class Matrix:
 
     __rmul__ = __mul__
 
+    def transpose(self):
+        matrix_in = self.obj_list
+        trdmatrix = []
+        lines = len(matrix_in)
+        columns = len(matrix_in[0])
+        k = 0
+        while k < columns:
+            new_line = []
+            for i in matrix_in:
+                new_line.append(i[k])
+            trdmatrix.append(new_line)
+            k += 1
+        self.obj_list = Matrix(trdmatrix)
+        return self.obj_list
+
+    @staticmethod
+    def transposed(matrix_in):
+        trdmatrix = []
+        lines = len(matrix_in)
+        columns = len(matrix_in[0])
+        k = 0
+        while k < columns:
+            new_line = []
+            for i in matrix_in:
+                new_line.append(i[k])
+            trdmatrix.append(new_line)
+            k += 1
+        return trdmatrix
+
+
 #exec(stdin.read())
 
-m1 = Matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
-m2 = Matrix([[0, 1, 0], [20, 0, -1], [-1, -2, 0]])
-print(m1 + m2)
-
-m2 = Matrix([[0, 1, 0], [20, 0, -1]])
-try:
-    m = m1 + m2
-    print('WA\n' + str(m))
-except MatrixError as e:
-    print(e.matrix1)
-    print(e.matrix2)
+m = Matrix([[10, 10], [0, 0], [1, 1]])
+print(m)
+print(Matrix.transposed(m))
+print(m)

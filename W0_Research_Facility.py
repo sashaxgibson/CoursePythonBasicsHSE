@@ -1,17 +1,3 @@
-inFile = open('input.txt')
-a = inFile.read().split()
-slavear = dict()
-for cur in a:
-    if cur in slavear:
-        slavear[cur] += 1
-    else:
-        slavear[cur] = 1
-#print(slavear)
-otvlist = []
-for now in slavear:
-    otvlist.append((now, slavear[now]))
-    #print(otvlist[-1])
-#print(sorted(otvlist, key=lambda x: (x[1], x[0]))[0])
-slovo = sorted(otvlist, key=lambda x: (x[1], x[0]))[0]
-print(slovo)
-print(slovo[0])
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for i in range(len(a)):
+    print(i)
