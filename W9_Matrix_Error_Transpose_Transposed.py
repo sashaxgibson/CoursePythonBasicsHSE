@@ -62,28 +62,18 @@ class Matrix:
                 new_line.append(i[k])
             t_matrix.append(new_line)
             k += 1
-        self.obj_list = Matrix(t_matrix)
-        return self.obj_list
+        self.obj_list = t_matrix
+        return self
 
     @staticmethod
     def transposed(matrix_in):
-        t_matrix = []
-        columns = len(matrix_in[0])
-        k = 0
-        while k < columns:
+        trdMatrix = []
+        for k in range(len(matrix_in.obj_list[0])):
             new_line = []
-            for i in matrix_in:
+            for i in matrix_in.obj_list:
                 new_line.append(i[k])
-            t_matrix.append(new_line)
-            k += 1
-        return Matrix(t_matrix)
+            trdMatrix.append(new_line)
+        return Matrix(trdMatrix)
 
 
-#exec(stdin.read())
-
-# Task 3 check 2
-m = Matrix([[10, 10], [0, 0], [1, 1]])
-print(m)
-m1 = m.transpose()
-print(m)
-print(m1)
+exec(stdin.read())
