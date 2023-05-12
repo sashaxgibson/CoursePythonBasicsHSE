@@ -1,5 +1,3 @@
-s = 'abc'
-t = (10, 20, 30, 40)
-r =  list(zip(s, t))
-print(r)
-print(r[1][0])
+a = [10, 20, 30, 40, 560, 1, 21, 15, 9]
+for i in a:
+    print(i)
