@@ -1,0 +1,1 @@
+n, m, k = int(input()), int(input()), int(input())
