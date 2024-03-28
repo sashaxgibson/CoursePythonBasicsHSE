@@ -1,4 +1,5 @@
-a, b = int(input()), int(input())
-c, d = int(input()), int(input())
-print(a + b + c + d)
-print(a % 2)
+a, b, c, d = int(input()), int(input()), int(input()), int(input())
+if a % 2 == b % 2 and c % 2 == d % 2:
+    print("YES")
+else:
+    print("NO")
